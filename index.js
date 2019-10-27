@@ -25,7 +25,7 @@ app.get("/myforecast", async (req, res, next) => {
         `https://api.darksky.net/forecast/${process.env.REACT_APP_DARKSKY_KEY}/${latitude},${longitude}?units=si`
       );
 
-      //   console.log(weatherData);
+    //   console.log(weatherData);
       res.send(weatherData.data);
     } catch (err) {
       next(err);
