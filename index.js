@@ -26,7 +26,7 @@ app.get("/myforecast", async (req, res, next) => {
       );
 
       //   console.log(weatherData);
-      res.send(weatherData.data);
+      res.send(weatherData);
     } catch (err) {
       next(err);
     }
