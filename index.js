@@ -4,7 +4,7 @@ const dotenv = require("dotenv");
 dotenv.config();
 
 const app = express();
-const port = 3001;
+const PORT = process.env.PORT || 3001;
 
 app.get("/myforecast", async (req, res, next) => {
   // dark sky request here....
@@ -25,7 +25,7 @@ app.get("/myforecast", async (req, res, next) => {
         `https://api.darksky.net/forecast/${process.env.REACT_APP_DARKSKY_KEY}/${latitude},${longitude}?units=si`
       );
 
-    //   console.log(weatherData);
+      //   console.log(weatherData);
       res.send(weatherData.data);
     } catch (err) {
       next(err);
@@ -33,4 +33,4 @@ app.get("/myforecast", async (req, res, next) => {
   }
 });
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+app.listen(PORT, () => console.log(`Example app listening on port ${PORT}!`));
