@@ -1,9 +1,12 @@
 const express = require("express");
+var cors = require("cors");
 const axios = require("axios");
 const dotenv = require("dotenv");
 dotenv.config();
 
 const app = express();
+app.use(cors());
+
 const PORT = process.env.PORT || 3001;
 
 app.get("/myforecast", async (req, res, next) => {
